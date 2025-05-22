@@ -24,14 +24,8 @@ jobs:
     - name: Run API Tests
       run: ./gradlew clean test
 
-    - name: Install Allure
-      run: |
-        sudo apt-add-repository ppa:qameta/allure -y
-        sudo apt-get update
-        sudo apt-get install allure -y
-
-    - name: Allure Report
-      run:  allure generate build/allure-results
+    - name: Run Allure
+      run:  allure serve
 
     - name: Allure Report HTML
       uses: actions/upload-artifact@v4

@@ -22,7 +22,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: Run API Tests
-      run: ./gradlew clean test -DsuiteXmlFile=testing.xml
+      run: ./gradlew clean test
 
     - name: Install Allure
       run: |

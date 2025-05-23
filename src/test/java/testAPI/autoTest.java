@@ -17,6 +17,7 @@ public class autoTest {
     @Test
     public void getUser() {
         given()
+                .header("x-api-key", "reqres-free-v1")
                 .when()
                 .get("api/users?page=1")
                 .then()
@@ -35,6 +36,7 @@ public class autoTest {
         jsonObject.put("job", job);
 
         given()
+                .header("x-api-key", "reqres-free-v1")
                 .header("Content-TYpe", "application/json")
                 .body(jsonObject.toString())
                 .post("api/users")
@@ -62,6 +64,7 @@ public class autoTest {
         jsonObject.put("avatar", ava);
 
         given()
+                .header("x-api-key", "reqres-free-v1")
                 .header("Content-Type", "application/json")
                 .body(jsonObject.toString())
                 .put("api/users/" + userId)
@@ -79,6 +82,7 @@ public class autoTest {
         jsonObject.put("first_name", newName);
 
         given()
+                .header("x-api-key", "reqres-free-v1")
                 .header("Content-Type", "application/json")
                 .body(jsonObject.toString())
                 .patch("api/users/" + userId)
@@ -91,6 +95,7 @@ public class autoTest {
     public void deleteUser() {
         int userDelete = 4;
         given()
+                .header("x-api-key", "reqres-free-v1")
                 .when()
                 .delete("api/users/" + userDelete)
                 .then()

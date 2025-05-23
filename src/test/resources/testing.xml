@@ -2,7 +2,7 @@
 <suite name="API Automation Suite">
     <test name="API Test">
         <classes>
-            <class name="testAPI.autoTest"/>
+            <class name="testAPI.AutoTest"/>
         </classes>
     </test>
 </suite>

@@ -18,14 +18,17 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
 
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
     - name: Setup gradlew
       run: chmod +x gradlew
 
-    - name: Run API Tests
-      run: ./gradlew clean test
+    - name: build gradle
+      run: ./gradlew build
 
-    - name: Run Allure
-      run:  allure serve
+    - name: Run gradle test
+      run:  ./gradlew test
 
     - name: Allure Report HTML
       uses: actions/upload-artifact@v4
